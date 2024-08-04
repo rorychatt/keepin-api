@@ -15,7 +15,7 @@ public class InventoryTests
     public void InventoryShould_AddItem()
     {
         var inventory = new Inventory();
-        var item = new Item("1", "Item 1", "Description 1");
+        var item = new Item("testItem", "a funny item");
         inventory.AddItem(item);
         Assert.Single(inventory.Items);
     }
@@ -24,9 +24,9 @@ public class InventoryTests
     public void InventoryShould_RemoveItem()
     {
         var inventory = new Inventory();
-        var item = new Item("1", "Item 1", "Description 1");
+        var item = new Item("testItem", "a funny item");
         inventory.AddItem(item);
-        inventory.RemoveItem("1");
+        inventory.RemoveItem(item.Id);
         Assert.Empty(inventory.Items);
     }
     
@@ -34,9 +34,9 @@ public class InventoryTests
     public void InventoryShould_GetItem()
     {
         var inventory = new Inventory();
-        var item = new Item("1", "Item 1", "Description 1");
+        var item = new Item("testItem", "a funny item");
         inventory.AddItem(item);
-        var result = inventory.GetItem("1");
+        var result = inventory.GetItem(item.Id);
         Assert.Equal(item, result);
     }
 }

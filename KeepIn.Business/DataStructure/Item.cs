@@ -1,8 +1,8 @@
 ﻿namespace Business.DataStructure;
 
-public class Item(string name, string id, string description) : IItem
+public class Item(string name, string description) : IItem
 {
     public string Name { get; set; } = name;
-    public string Id { get; set; } = id;
+    public string Id { get; init; } = $"item_{Guid.NewGuid().ToString()}";
     public string Description { get; set; } = description;
 }

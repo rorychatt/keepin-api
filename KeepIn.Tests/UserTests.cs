@@ -29,7 +29,7 @@ public class UserTests
     public void UserShould_HaveInventoryItems()
     {
         var user = new User(new UserName("Dimas", "Kuznetsov"));
-        var item = new Item("1", "Item 1", "Description 1");
+        var item = new Item("testItem", "a funny item");
         user.Inventory.AddItem(item);
         Assert.Single(user.Inventory.Items);
     }
@@ -38,9 +38,9 @@ public class UserTests
     public void UserShould_HaveInventoryItems_AfterRemove()
     {
         var user = new User(new UserName("Dimas", "Kuznetsov"));
-        var item = new Item("1", "Item 1", "Description 1");
+        var item = new Item("testItem", "a funny item");
         user.Inventory.AddItem(item);
-        user.Inventory.RemoveItem("1");
+        user.Inventory.RemoveItem(item.Id);
         Assert.Empty(user.Inventory.Items);
     }
     

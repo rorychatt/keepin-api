@@ -3,6 +3,6 @@
 public interface IItem
 {
     string Name { get; set; }
-    string Id { get; set; }
+    string Id { get; init; }
     string Description { get; set; }
 }
