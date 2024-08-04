@@ -25,4 +25,23 @@ public class UserTests
         Assert.NotNull(user.Name);
     }
     
+    [Fact]
+    public void UserShould_HaveInventoryItems()
+    {
+        var user = new User(new UserName("Dimas", "Kuznetsov"));
+        var item = new Item("1", "Item 1", "Description 1");
+        user.Inventory.AddItem(item);
+        Assert.Single(user.Inventory.Items);
+    }
+    
+    [Fact]
+    public void UserShould_HaveInventoryItems_AfterRemove()
+    {
+        var user = new User(new UserName("Dimas", "Kuznetsov"));
+        var item = new Item("1", "Item 1", "Description 1");
+        user.Inventory.AddItem(item);
+        user.Inventory.RemoveItem("1");
+        Assert.Empty(user.Inventory.Items);
+    }
+    
 }
