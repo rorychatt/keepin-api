@@ -2,7 +2,7 @@
 
 namespace KeepIn.Api.Models;
 
-public interface IUserRepository
+public interface IUsersRepository
 {
     Task<IEnumerable<User>> GetUsersAsync();
     Task<User?> GetUserByIdAsync(string id);

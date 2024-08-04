@@ -2,7 +2,7 @@
 
 namespace KeepIn.Api.Models;
 
-public class UserRepository : IUserRepository
+public class UsersRepository : IUsersRepository
 {
     private readonly Dictionary<string, User> _users = new();
     public Task<IEnumerable<User>> GetUsersAsync()
