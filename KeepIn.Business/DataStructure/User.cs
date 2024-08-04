@@ -1,15 +1,8 @@
 ﻿namespace Business.DataStructure;
 
-public class User : IUser
+public class User(UserName name) : IUser
 {
-    public string Id { get; init; }
-    public UserName Name { get; init; }
-    public Inventory Inventory { get; init; }
-    
-    public User(string id, UserName name, Inventory inventory)
-    {
-        Id = id;
-        Name = name;
-        Inventory = inventory;
-    }
+    public string Id { get; init; } = $"user_{Guid.NewGuid().ToString()}";
+    public UserName Name { get; init; } = name;
+    public Inventory Inventory { get; init; } = new();
 }
