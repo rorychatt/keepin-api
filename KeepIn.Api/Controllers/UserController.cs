@@ -4,7 +4,7 @@ namespace KeepIn.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/Inventory")]
-public class InventoryController : ControllerBase
+public class UserController : ControllerBase
 {
    
 }
