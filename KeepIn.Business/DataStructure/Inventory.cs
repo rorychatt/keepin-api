@@ -5,26 +5,21 @@ public class Inventory : IInventory
     public Dictionary<string, Item> Items { get; init; } = new();
     public void AddItem(Item item)
     {
-        throw new NotImplementedException();
+        Items.Add(item.Id, item);
     }
 
     public void RemoveItem(string id)
     {
-        throw new NotImplementedException();
+        Items.Remove(id);
     }
 
     public Item GetItem(string id)
     {
-        throw new NotImplementedException();
-    }
-
-    public void UpdateItem(string id, Item item)
-    {
-        throw new NotImplementedException();
+        return Items[id];
     }
 
     public void Clear()
     {
-        throw new NotImplementedException();
+        Items.Clear();
     }
 }
